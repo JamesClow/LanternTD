@@ -1022,8 +1022,10 @@ GameObject:
   - component: {fileID: 1227331239}
   - component: {fileID: 1227331238}
   - component: {fileID: 1227331237}
-  m_Layer: 0
-  m_Name: Cylinder
+  - component: {fileID: 1227331241}
+  - component: {fileID: 1227331240}
+  m_Layer: 7
+  m_Name: MissleLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1039,7 +1041,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7671, y: 5.7671, z: 5.7671}
+  m_LocalScale: {x: 9.776964, y: 9.776964, z: 9.776964}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1083224771}
@@ -1059,7 +1061,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1117,6 +1119,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227331235}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1227331240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227331235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10315299d4449fb469ab3ad491f71600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3215656580401817100, guid: 5b22f38ffbb6a6d4b93cb349e8e00294, type: 3}
+  targeting: {fileID: 1227331241}
+  launchInterval: 1
+--- !u!114 &1227331241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227331235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca68270c036029458b8541786986626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
+  targetsInRange: []
+  target: {fileID: 0}
 --- !u!1 &1607722393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,8 +1737,12 @@ PrefabInstance:
       value: Tower
       objectReference: {fileID: 0}
     - target: {fileID: 3971868378758389550, guid: 35beaa3311b52a8419c133537727f28e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.050215147
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971868378758389550, guid: 35beaa3311b52a8419c133537727f28e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.12
+      value: -6.49
       objectReference: {fileID: 0}
     - target: {fileID: 3971868378758389550, guid: 35beaa3311b52a8419c133537727f28e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1714,7 +1750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3971868378758389550, guid: 35beaa3311b52a8419c133537727f28e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.86
+      value: -3.26
       objectReference: {fileID: 0}
     - target: {fileID: 3971868378758389550, guid: 35beaa3311b52a8419c133537727f28e, type: 3}
       propertyPath: m_LocalRotation.w
