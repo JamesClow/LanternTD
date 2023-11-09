@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public healthMax = 10;
-    public healthCurrent = 0;
-    
+    public int healthMax = 10;
+    public int healthCurrent = 0;
+
     public void TakeDamage(int dmg) {
         this.healthCurrent -= dmg;
         if(this.healthCurrent <= 0) {

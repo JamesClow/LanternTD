@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public attacksPerSecond = 1;
+    public int attacksPerSecond = 1;
+
+    // Start a timer, when the timer elapses, find a target based on this building's targeting script
 
     void Start()
     {
