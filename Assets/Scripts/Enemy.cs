@@ -6,23 +6,20 @@ public class Enemy : MonoBehaviour
 {
     public Camera cam;
     public UnityEngine.AI.NavMeshAgent agent;
+    public Health health;
 
     // Update is called once per frame
     void Start()
     {
         agent.SetDestination(HomeBase.getInstance().transform.position);
     }
-    // void Update()
-    // {
-    //     if (Input.GetMouseButtonDown(0))
-    //     {
-    //         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-    //         RaycastHit hit;
-
-    //         if (Physics.Raycast(ray, out hit))
-    //         {
-    //             agent.SetDestination(hit.point);
-    //         }
-    //     }
-    // }
+    void OnTriggerEnter(Collider collider)
+    {
+        Projectile projectile = collider.gameObject.GetComponent<Projectile>();
+        if (projectile != null && collider.gameObject.tag == "Projectile")
+        {
+            health.TakeDamage(projectile.damage);
+            Destroy(projectile.gameObject);
+        }
+    }
 }
