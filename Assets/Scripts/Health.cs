@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         // Notify death observers
+        AudioManager.getInstance().Play("Chime");
         Destroy(this.gameObject);
     }
 
